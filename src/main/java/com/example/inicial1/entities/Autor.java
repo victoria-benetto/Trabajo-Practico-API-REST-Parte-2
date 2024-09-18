@@ -1,5 +1,6 @@
 package com.example.inicial1.entities;
 
+
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.envers.Audited;
@@ -15,19 +16,18 @@ import java.io.Serializable;
 @Builder
 @Audited
 
-@Table(name = "domicilio")
-public class Domicilio  implements Serializable {
+@Table(name = "autor")
+public class Autor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre")
-    private String calle;
+    @Column(name= "nombre")
+    private String nombre;
 
-    @Column(name = "numero")
-    private int numero;
+    @Column(name= "apellido")
+    private String apellido;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "fk_localidad")
-    private Localidad localidad;
+    @Column(name= "biografia")
+    private String biografia;
 }
