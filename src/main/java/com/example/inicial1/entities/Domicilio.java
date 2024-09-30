@@ -4,22 +4,17 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.envers.Audited;
 
-import java.io.Serializable;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-@ToString
 @Builder
 @Audited
 
 @Table(name = "domicilio")
-public class Domicilio  implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Domicilio  extends Base{
 
     @Column(name = "nombre")
     private String calle;

@@ -12,15 +12,11 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Setter
 @Getter
-@ToString
-@Builder
 @Audited
 
 @Table(name = "autor")
-public class Autor implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Autor extends Base {
+
 
     @Column(name= "nombre")
     private String nombre;
@@ -28,6 +24,6 @@ public class Autor implements Serializable {
     @Column(name= "apellido")
     private String apellido;
 
-    @Column(name= "biografia")
+    @Column(name= "biografia", length = 1500)
     private String biografia;
 }

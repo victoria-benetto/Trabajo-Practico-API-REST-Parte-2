@@ -4,8 +4,6 @@ package com.example.inicial1.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.envers.Audited;
-
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -13,15 +11,12 @@ import java.util.List;
 @NoArgsConstructor
 @Setter
 @Getter
-@ToString
-@Builder
+
 @Audited
 
 @Table(name = "libro")
-public class Libro implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Libro extends Base{
+
 
     @Column(name= "gemero")
     private String genero;

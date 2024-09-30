@@ -19,10 +19,7 @@ import java.util.List;
 @Audited
 
 @Table(name = "persona")
-public class Persona implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Persona extends Base {
 
     @Column(name= "nombre")
     private String nombre;
@@ -41,7 +38,7 @@ public class Persona implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(
             name = "persona_Libro",
-            joinColumns = @JoinColumn(name = "persoaa_id"),
+            joinColumns = @JoinColumn(name = "persona_id"),
             inverseJoinColumns = @JoinColumn(name = "libro_id")
     )
     private List<Libro> libros = new ArrayList<Libro>();

@@ -1,4 +1,6 @@
 package com.example.inicial1.services;
 
-public interface AutorService {
+import com.example.inicial1.entities.Autor;
+
+public interface AutorService extends BaseService<Autor, Long>{
 }
